@@ -22,24 +22,32 @@ class budget :
       """
       # amount = int(input('Enter amount to withdraw: '))
       if(self.check_balance(amount)):
-         self.account.append({})
+         self.account.append({'amount': -amount})
          return 'Take your cash'
       return 'Insufficient fund'
 
    
    def check_balance( self, amount ):
       """ A check balance method  """
-      balance = 2000
+      balance = 0
       for item in self.account:
          balance +=item['amount']
       
       return balance
+
+   def transfer_fund(self, amount, category):
+      if (check_balance(amount)):
+         self.withdraw(amount, 'Transfer to' + self.category)
+         self.deposit(amount, 'Transfer from' + self.category)
+         return True
+      
+      return False
 
 category = budget('Clothing', 1000)
 category_2 = budget('Food', 2000)
 category_3 = budget('Entertament', 3000)
 
 # print(category.deposit(1000))
-print(category.withdraw(1000))
+print(category_2.withdraw(1000))
 # print(category_2.deposit(2000))
 # print(category_3.deposit(3000))

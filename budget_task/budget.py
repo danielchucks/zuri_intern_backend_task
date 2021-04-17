@@ -1,4 +1,4 @@
-
+# Class definition
 class budget :
 
    # The constructor to the class
@@ -36,7 +36,7 @@ class budget :
       return balance
 
    def transfer_fund(self, amount, category):
-      if (check_balance(amount)):
+      if (self.check_balance(amount)):
          self.withdraw(amount, 'Transfer to' + self.category)
          self.deposit(amount, 'Transfer from' + self.category)
          return True
@@ -48,6 +48,8 @@ category_2 = budget('Food', 2000)
 category_3 = budget('Entertament', 3000)
 
 # print(category.deposit(1000))
-print(category_2.withdraw(1000))
+# print(category_2.withdraw(1000))
 # print(category_2.deposit(2000))
-# print(category_3.deposit(3000))
+print(category_3.deposit(3000))
+
+# print(category_3.transfer_fund(3000, 'clothing'))
